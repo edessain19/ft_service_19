@@ -25,3 +25,5 @@ kubectl apply -f srcs/metallb.yaml
 
 echo "Nginx..."
 docker build -t mynginx	./srcs/nginx/
+kubectl apply -f srcs/nginx/srcs/nginx.yaml
+

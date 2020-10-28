@@ -16,7 +16,6 @@ COPY srcs/nginx.conf /etc/nginx/
 
 COPY srcs/index.html /www
 
-kubectl apply -f srcs/nginx.yaml
 
 EXPOSE 80 443
 
