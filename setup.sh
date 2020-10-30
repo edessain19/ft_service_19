@@ -23,7 +23,7 @@ eval $(minikube docker-env)
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 
 kubectl apply -f srcs/metallb.yaml
-
+kubectl apply -f srcs/replication.yaml
 echo "Nginx..."
 docker build -t mynginx	./srcs/nginx/
-kubectl apply -f srcs/nginx/srcs/nginx.yaml
+kubectl create -f srcs/nginx/srcs/nginx.yaml
