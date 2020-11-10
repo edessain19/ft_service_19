@@ -1,6 +1,6 @@
 echo "verif..."
 minikube stop
-minikube delete --all
+#minikube delete --all
 
 echo "Minikube start..."
 minikube start --driver=virtualbox --memory='3000' --disk-size 5000MB
@@ -22,8 +22,10 @@ eval $(minikube docker-env)
 # On first install only
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 
-kubectl apply -f srcs/metallb.yaml
-kubectl apply -f srcs/replication.yaml
+kubectl apply -f services/metallb.yaml
+
 echo "Nginx..."
-docker build -t mynginx	./srcs/nginx/
-kubectl create -f srcs/nginx/srcs/nginx.yaml
+docker build -t mynginx	./services/nginx/
+kubectl apply -f services/nginx/srcs/nginx.yaml
+
+docker build -t mysql ./services/mysql/
