@@ -1,11 +1,12 @@
 echo "verif..."
 minikube stop
-#minikube delete --all
+minikube delete --all
 
 echo "Minikube start..."
 minikube start --driver=virtualbox --memory='3000' --disk-size 5000MB
 
 echo "addons..."
+minikube addons enable metrics-server
 minikube addons enable metallb
 minikube addons enable dashboard
 
@@ -25,7 +26,14 @@ kubectl create secret generic -n metallb-system memberlist --from-literal=secret
 kubectl apply -f services/metallb.yaml
 
 echo "Nginx..."
-docker build -t mynginx	./services/nginx/
+docker build -t mynginx ./services/nginx/
 kubectl apply -f services/nginx/srcs/nginx.yaml
 
+echo "Mysql"
 docker build -t mysql ./services/mysql/
+kubectl apply -f services/mysql/mysql.yaml
+
+echo "Wordpress..."
+docker build -t mynginx ./services/wordpress/
+kubectl apply -f services/wordpress/wordpress.yaml
+

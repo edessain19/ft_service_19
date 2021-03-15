@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.12
 
 MAINTAINER Evrard Dessain <edessain@stident.s19.be>
 
