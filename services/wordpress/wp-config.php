@@ -1,5 +1,8 @@
+
+
 <?php
 /**
+ * sources:  https://github.com/WordPress/WordPress/blob/master/wp-config-sample.php
  * La configuration de base de votre installation WordPress.
  *
  * Ce fichier contient les réglages de configuration suivants : réglages MySQL,

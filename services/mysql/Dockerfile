@@ -11,6 +11,7 @@ RUN apk update \
 RUN mysql --version
 
 COPY ./sql_init.sh .
+COPY ./srcs/wordpress.sql /
 COPY ./init_docker.sh .
 
 RUN chmod 777 sql_init.sh
