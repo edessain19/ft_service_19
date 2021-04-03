@@ -15,7 +15,7 @@ $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['user'] = 'admin';
 $cfg['Servers'][$i]['password'] = 'admin';
-$cfg['Servers'][$i]['auth_type'] = 'cookie';
+// $cfg['Servers'][$i]['auth_type'] = 'cookie';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = 'mysql-service.default.svc.cluster.local';
 $cfg['Servers'][$i]['port'] = '3306';
