@@ -9,8 +9,8 @@ RUN apk add telegraf --repository http://dl-3.alpinelinux.org/alpine/edge/commun
 
 RUN mkdir /www
 
-RUN wget https://wordpress.org/latest.tar.gz \
-	&& tar -xvf latest.tar.gz \
+RUN wget https://wordpress.org/wordpress-5.2.9.tar.gz \
+	&& tar -xvf wordpress-5.2.9.tar.gz \
 	&& mv wordpress/* /www 
 
 COPY ./wp-config.php /www/wp-config.php

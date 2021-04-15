@@ -1,6 +1,6 @@
 FROM alpine:3.12
 
-#MAINTAINER
+MAINTAINER Evrard Dessain <edessain@student.s19.be>
 
 RUN	apk update \
 	&&	apk	add	php7 php7-fpm php7-opcache php7-gd php7-mysqli php7-zlib php7-curl php7-mbstring php7-json php7-session php-json php-mbstring nginx

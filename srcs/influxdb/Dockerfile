@@ -1,7 +1,6 @@
 FROM alpine:3.12
 
 MAINTAINER Evrard Dessain <edessain@student.s19.be>
- 
 
 RUN apk update \
 	&&	apk add influxdb curl
